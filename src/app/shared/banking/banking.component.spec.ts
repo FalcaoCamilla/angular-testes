@@ -39,6 +39,17 @@ describe('BankingComponent', () => {
 
     expect(component.obterPoupanca()).toEqual(20);
     expect(component.obterCarteira()).toEqual(40);
-  })
+  });
+
+  it(`(U) sacar() must not transfer values other than number (isNaN) or negative values`, () => {
+    expect(component.sacar('string')).not.toBeTruthy()
+    expect(component.sacar('100')).not.toBeTruthy()
+  });
+
+
+  it(`(U) depositar() must not transfer values other than number (isNaN) or negative values`, () => {
+    expect(component.depositar('string')).not.toBeTruthy()
+    expect(component.depositar('100')).not.toBeTruthy()
+  });
 
 });
