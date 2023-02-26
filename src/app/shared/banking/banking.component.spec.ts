@@ -16,7 +16,7 @@ describe('BankingComponent', () => {
     fixture = TestBed.createComponent(BankingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }); //the "beforeEach" is called before the "its" functions
+  }); //the "beforeEach" is called before each "its" functions
 
   it('should create', () => {
     expect(component).toBeTruthy();
