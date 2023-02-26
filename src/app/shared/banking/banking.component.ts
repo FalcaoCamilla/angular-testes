@@ -22,14 +22,22 @@ export class BankingComponent implements OnInit {
     return this.carteira;
   }
 
-  sacar(value: string): number{
+  sacar(value: string): number | undefined{
     const valorSaque = Number(value);
-    return valorSaque;
+    if(isNaN(valorSaque) || this.poupanca < valorSaque){
+      return //if the value is a string, a break will be given
+    }
+    this.poupanca -= valorSaque;
+    return (this.carteira += valorSaque);
   }
 
-  depositar(value: string): number{
+  depositar(value: string): number | undefined{
     const valorDeposito = Number(value);
-    return valorDeposito
+    if(isNaN(valorDeposito) || this.carteira < valorDeposito){
+      return //if the value is a string, a break will be given
+    }
+    this.carteira -= valorDeposito;
+    return (this.poupanca += valorDeposito)
   }
 
 }
