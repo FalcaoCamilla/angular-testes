@@ -5,17 +5,18 @@
 </p>
 
 <p>
-  Poupança: R$ {{obterPoupanca()}}
+  Poupança: R$
+  <span id="poupanca"> {{obterPoupanca()}} </span>
   <br>
-  <input type="text" #saque>
-  <button (click)="sacar(saque.value)">Sacar</button>
+  <input id="sacar-input" type="text" #saque>
+  <button id="sacar-btn" (click)="sacar(saque.value)">Sacar</button>
 </p>
 
 <p>
   Carteira: R$ {{obterCarteira()}}
   <br>
-  <input type="text" #deposito>
-  <button (click)="depositar(deposito.value)">Depositar</button>
+  <input id="depositar-input" type="text" #deposito>
+  <button id="depositar-btn" (click)="depositar(deposito.value)">Depositar</button>
 </p>
 
 

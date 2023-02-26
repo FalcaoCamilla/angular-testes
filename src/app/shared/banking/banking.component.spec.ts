@@ -52,4 +52,17 @@ describe('BankingComponent', () => {
     expect(component.depositar('100')).not.toBeTruthy()
   });
 
+  it(`(I) testing the operation of interface (buttons and inputs)`, () => {
+    let element = fixture.debugElement.nativeElement;
+
+    element.querySelector('#depositar-input').value = "10"; //assigning the text input value 10
+    element.querySelector('#depositar-btn').click(); //clicking in the button...
+    fixture.detectChanges();
+
+    expect(component.obterCarteira()).toEqual(40);
+    // expect(component.obterPoupanca()).toEqual(20);
+
+    expect(element.querySelector('#poupanca').textContent).toEqual('20')
+  })
+
 });
